@@ -7,6 +7,28 @@ main_window = Tk()
 main_window.title("Python Binary Tree")
 main_window.geometry("400x275")
 
+class BinaryTreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def Node(self, data):
+        if data == self.data:
+            return
+        
+        if data < self.data:
+            if self.left:
+                self.left.Node(data)
+            else:
+                self.left = BinaryTreeNode(data)
+        else:
+            if self.right:
+                self.right.Node(data)
+            else:
+                self.right = BinaryTreeNode(data)
+    
+
 def number():
     numbers = entry1.get().split()
     label2.configure(text="NUMBERS: " + str(numbers))
