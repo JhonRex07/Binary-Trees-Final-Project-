@@ -38,6 +38,43 @@ class BinaryTreeNode:
             return self.data
         return self.right.maximum()
     
+    def in_order_traversal(self):
+        elements = [self.data]
+
+        if self.left:
+            elements += self.left.in_order_traversal()
+
+        elements.append(self.data)
+
+        if self.right:
+            elements += self.right.in_order_traversal()
+
+        return elements
+    
+    def pre_order_traversal(self):
+        elements = [self.data]
+
+        if self.left:
+            elements += self.left.pre_order_traversal()
+
+        if self.right:
+            elements += self.right.pre_order_traversal()
+
+        return elements
+    
+    def post_order_traversal(self):
+        elements = [self.data]
+
+        if self.left:
+            elements += self.left.post_order_traversal()
+
+        if self.right:
+            elements += self.right.post_order_traversal()
+
+        elements.append(self.data)
+
+        return elements
+
 def number():
     numbers = entry1.get().split()
     label2.configure(text="NUMBERS: " + str(numbers))
