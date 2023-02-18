@@ -39,7 +39,7 @@ class BinaryTreeNode:
         return self.right.maximum()
     
     def in_order_traversal(self):
-        elements = [self.data]
+        elements = []
 
         if self.left:
             elements += self.left.in_order_traversal()
@@ -52,8 +52,10 @@ class BinaryTreeNode:
         return elements
     
     def pre_order_traversal(self):
-        elements = [self.data]
+        elements = []
 
+        elements.append(self.data)
+        
         if self.left:
             elements += self.left.pre_order_traversal()
 
@@ -63,7 +65,7 @@ class BinaryTreeNode:
         return elements
     
     def post_order_traversal(self):
-        elements = [self.data]
+        elements = []
 
         if self.left:
             elements += self.left.post_order_traversal()
