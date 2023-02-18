@@ -28,7 +28,16 @@ class BinaryTreeNode:
             else:
                 self.right = BinaryTreeNode(data)
     
-
+    def minimum(self):
+        if self.left is None:
+            return self.data
+        return self.left.minimum()
+    
+    def maximum(self):
+        if self.right is None:
+            return self.data
+        return self.right.maximum()
+    
 def number():
     numbers = entry1.get().split()
     label2.configure(text="NUMBERS: " + str(numbers))
