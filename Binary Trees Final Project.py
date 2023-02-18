@@ -79,6 +79,21 @@ def number():
     numbers = entry1.get().split()
     label2.configure(text="NUMBERS: " + str(numbers))
     
+    numbers_tree = build_tree(numbers)
+    label3.configure(text="MINIMUM: " + numbers_tree.minimum())
+
+    numbers_tree = build_tree(numbers)
+    label4.configure(text="MAXIMUM: " + numbers_tree.maximum())
+
+    numbers_tree = build_tree(numbers)
+    label5.configure(text="IN-ORDER TRAVERSAL: " + str(numbers_tree.in_order_traversal()))
+
+    numbers_tree = build_tree(numbers)
+    label6.configure(text="PRE-ORDER TRAVERSAL: " + str(numbers_tree.pre_order_traversal()))
+
+    numbers_tree = build_tree(numbers)
+    label7.configure(text="POST-ORDER TRAVERSAL: " + str(numbers_tree.post_order_traversal()))
+    
 if __name__ == '__main__':
     label1 = Label(main_window, text="ENTER NUMBERS:", font=('Bold', 12))
     label1.place(height=100, width=415)
