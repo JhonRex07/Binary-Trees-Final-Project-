@@ -75,6 +75,14 @@ class BinaryTreeNode:
 
         return elements
 
+def build_tree(elements):
+    root = BinaryTreeNode(elements[0])
+    
+    for i in range(1, len(elements)):
+        root.Node(elements[i])
+
+    return root
+
 def number():
     numbers = entry1.get().split()
     label2.configure(text="NUMBERS: " + str(numbers))
@@ -122,4 +130,4 @@ if __name__ == '__main__':
     label7 = Label(main_window, text="POST-ORDER TRAVERSE: ")
     label7.place(height=30, x=35, y=220)
 
-mainloop
+mainloop()
